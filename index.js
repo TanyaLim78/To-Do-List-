@@ -5,12 +5,15 @@ var nameinput=$('.nameinput').val();
 var section1=$('.section1');
 var button2=$('.button2');
 var name=$('h1');
+
 button2.on("click", printitem);
 function printitem(){
  event.preventDefault();
  var listinput=$('.listinput').val();
+ localStorage.setItem('listinput',listinput);
 section1.append(`<p>-${listinput}</p>`);
 var listinput= $('.listinput').val("");
+
 }
 button1.on("click", printname);
 function printname(){
@@ -19,3 +22,7 @@ var nameinput=$('.nameinput').val();
 var name=$('h1');
 name.text(`${nameinput}'s To Do List`);
 }
+
+//for(var listinput = 0; listinput++){
+  //localStorage.setItem('listinput',listinput);
+//}
